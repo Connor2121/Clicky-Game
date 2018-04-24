@@ -1,0 +1,12 @@
+.jumbotron {
+  background: #b71775;
+  height: 400px;
+  margin: 0;
+  padding-top: 75px;
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+}
+.container {
+  padding-top: 90px;
+}
