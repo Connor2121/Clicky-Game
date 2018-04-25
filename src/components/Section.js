@@ -2,10 +2,16 @@ import React from "react";
 import "../styles/Section.css";
 
 // By importing the Section.css file, it is added to the DOM whenever this component loads
-const Section = () => (
-  <section className="section">
+const Section = props => (
+  
+     <div className="card" onClick={() => props.select(props.name)}> 
+    <div className="img-container">
+      <img alt={props.name} src={props.image} />
+    </div>
+  </div> 
+
      
-  </section>
+  
 );
 
 export default Section;

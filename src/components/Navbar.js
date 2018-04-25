@@ -3,7 +3,7 @@ import "../styles/Navbar.css";
 
 // By importing the Navbar.css file, it is added to the DOM whenever this component loads
 
-const Navbar = () => (
+const Navbar = props => (
   <nav id="navbar-example2" className="navbar fixed-top navbar-light bg-dark ">
     <ul className="nav nav-pills nav-justified" id='nav-comp'>
       <li className="nav-item">
@@ -13,7 +13,10 @@ const Navbar = () => (
       Click an image to start!
       </li>
       <li className="nav-item">
-      <div className='score'>Score: </div>
+      <div className='score'>Score: {props.score}</div>
+      </li>
+      <li className="nav-item">
+      <div className='score'>High Score: {props.topScore}</div>
       </li>
     </ul>
   </nav>
