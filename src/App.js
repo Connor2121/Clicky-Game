@@ -11,7 +11,7 @@ class App extends Component {
   // Setting this.state.oceanto the sealife json array
   state = {
     ocean,
-    unselected: ocean,
+    chosen: [],
     score: 0,
     topScore: 0
   };
@@ -34,28 +34,21 @@ shuffleArray = array => {
 }
 
 select = name => {
-  const findCreature = this.state.unselected.find(item => item.name === name);
-
-    if(findCreature === undefined) {
-        // failure to select a new dog
-        this.setState({ 
-            topScore: (this.state.score > this.state.topScore) ? this.state.score : this.state.topScore,
-            score: 0,
-            ocean,
-            unselected: ocean
-        });
+  if(this.state.chosen.indexOf(name) === -1) {
+    this.state.score + 1;
+    if(this.state.score > this.state.topScore) {
+      this.setState({topScore: this.state.score});
     }
-    else {
-        // success to select a new dog
-        const newCreature = this.state.unselected.filter(item => item.name !== name);
+    this.setState({chosen: this.state.chosen.concat(name)})
+  }
+  else{
+    this.setState({
+      score: 0,
+      topScore: this.state.topScore,
+      chosen: []
+    });
+  }
         
-        this.setState({ 
-            score: this.state.score + 1,
-            ocean,
-            unselected: ocean
-        });
-    }
-
     this.shuffleArray(ocean);
 };
 
