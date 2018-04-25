@@ -35,13 +35,15 @@ shuffleArray = array => {
 
 select = name => {
   if(this.state.chosen.indexOf(name) === -1) {
-    this.state.score + 1;
-    if(this.state.score > this.state.topScore) {
-      this.setState({topScore: this.state.score});
-    }
-    this.setState({chosen: this.state.chosen.concat(name)})
+    
+    this.setState({chosen: this.state.chosen.concat(name),
+                   score: this.state.score + 1
+    })
   }
-  else{
+  else if(this.state.score > this.state.topScore) {
+    this.setState({topScore: this.state.score});
+  }
+   else {
     this.setState({
       score: 0,
       topScore: this.state.topScore,
