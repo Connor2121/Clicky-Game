@@ -6,8 +6,8 @@ import "../styles/Jumbo.css";
 const Jumbotron = () => (
   <div className="jumbotron jumbotron-fluid">
   <div className="container">
-    <h1 className="head">Clicky Game</h1>
-    <p className="lead">Clicking an image once to score points, but click the same image more than once and you lose!</p>
+    <h1 className="head">Memory</h1>
+    <p className="lead">Click every image, but dont click the same image twice!</p>
   </div>
 </div>
 );
